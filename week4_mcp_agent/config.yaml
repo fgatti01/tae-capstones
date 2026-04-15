@@ -1,0 +1,45 @@
+# Week 4 capstone — Incident Command Agent configuration
+# Consumed by orchestrator. YAML parsed with a minimal stdlib-only subset-parser
+# in incident_agent.config so no external yaml dependency is required.
+
+budgets:
+  max_loops: 4              # hard cap on Observe→Plan→Act→Learn cycles
+  max_latency_ms: 2000      # total wall-clock budget for the whole incident
+  max_tool_calls: 8         # orchestrator aborts if exceeded
+  max_per_tool:
+    run_diagnostic: 3
+    retrieve_runbook: 3
+    summarize_incident: 2
+
+tools:
+  # Tool registry mirrors the MCP server's capability advertisement.
+  # Handler implementations live in incident_agent.server.
+  - name: retrieve_runbook
+    description: Keyword search over embedded operational runbooks.
+    cost_hint_ms: 20
+  - name: run_diagnostic
+    description: Execute a canned diagnostic command against a sandboxed host.
+    cost_hint_ms: 40
+  - name: summarize_incident
+    description: Produce a concise incident summary from collected evidence.
+    cost_hint_ms: 15
+
+resources:
+  - uri: memory://alerts/latest
+    description: Most recent alert payload plus live memory deltas.
+
+planner:
+  # Deterministic FSM recommended in §5.5 of the handout.
+  # Each state names the next tool to invoke; the loop terminates when
+  # handoff is produced or budgets are exhausted.
+  states:
+    - observe
+    - retrieve
+    - diagnose
+    - summarize
+    - handoff
+
+telemetry:
+  log_level: INFO
+  trace_file: artifacts/sample_trace.jsonl
+  summary_file: artifacts/sample_summary.md

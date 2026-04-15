@@ -1,0 +1,2 @@
+# Standard library only. pytest is used for tests.
+pytest>=7.0

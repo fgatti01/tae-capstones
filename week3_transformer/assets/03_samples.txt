@@ -1,0 +1,14 @@
+--- prompt: 'the ' ---
+[greedy]   the the sellls sea the the sea the the seea the the the the the the the the the the the the the the the the the the the the the the the the the 
+[temp=0.8] the wochy fut a of the ifd te la loder bea ctey. cte norg. of ich ox bourds hox burns ma le nee dehoce beve sea nea sevilte mas ate seeeas tous 
+[temp=1.2] the tey teve tiriner. kellll. thall. sawf aall bep sawsyy mtare hol sire watirdey. ce ix basy chouce iatr thy coog. iuthas the sere brol. mug fo
+
+--- prompt: 'a jou' ---
+[greedy]   a joudd a the sea the the see the the see the the the the see the the the the the the the the the the the the the the the the the the the the the
+[temp=0.8] a jouwcchy fut a of the ifddde wa louwds sa cthy the nore thowds hea ome tin hox burns ma llouck muctud s mould joun sove the a oate wous skeak c
+[temp=1.2] a joud forgve ticind ack lathe thall. sawn aallp. wake stis tare hells he wate apld cle jy athor ouch iazr thy coog. iuthas la teere brol. mug fo
+
+--- prompt: 'time ' ---
+[greedy]   time a the the the the the sea the the seea the the the the the the the the the the the the the the the the the the the the the the the the the t
+[temp=0.8] time wouck fut a of the ifd te wis the ol a cthy the nore thowds hea ome tin hox burns ma llouck muutce s mould joun sove the a oate wous skeak c
+[temp=1.2] time tey teve tiriner. kellll. thalm. sawf aallp chrune.yy mrare houms hur quctx leace ix basy chouce ix woojkcck gouid has the sere brol. mug fo
