@@ -1,3 +1,5 @@
+<img src="https://theaiengineer.dev/tae_logo_gw_flatter.png" width="30%" align="right" alt="The AI Engineer">
+
 # TAE Capstones
 
 Capstone deliverables for **[The AI Engineer (TAE)](https://theaiengineer.dev/tae/tae.html)** course by **Dr. Yves J. Hilpisch** ([The Python Quants GmbH](https://tpq.io)).
